@@ -8,9 +8,81 @@
 
 #include <cstring>
 #include <cstdio>
+#include <iostream>
+#include <chrono>
+#include "utils.h"
+#include "zlib.h"
 
+// taken from https://zlib.net/zlib_how.html Usage example ///////////////
+#if defined(MSDOS) || defined(OS2) || defined(WIN32) || defined(__CYGWIN__)
+#  include <fcntl.h>
+#  include <io.h>
+#  define SET_BINARY_MODE(file) setmode(fileno(file), O_BINARY)
+#else
+#  define SET_BINARY_MODE(file)
+#endif
+
+#define CHUNK 16384
+///////////////////////////////////////////////////////////////////////////
 
 int main(int argc, char** argv)
 {
+    if (argc == 7 && strcmp(argv[1], "-c") == 0 && strcmp(argv[3], "-o") == 0)
+    {
+        //call compression function
+        std::cout << "compressing file..." << std::endl;
+        FILE* in = fopen(argv[2], "r+");
+        FILE* out = fopen(argv[4], "w");
+        int level = Z_DEFAULT_COMPRESSION;
+        if (argc == 7 && strcmp(argv[5], "-l") == 0)
+        {
+            level = std::stoi(argv[6]);
+        }
+        auto start = std::chrono::steady_clock::now();
+        int comp = utils::compress(in, out, level);
+        auto stop = std::chrono::steady_clock::now();
+        if (comp != Z_OK)
+        {
+            std::cout << "error occured" << std::endl;
+            return -1;
+        }
+        fseek(in, 0L, SEEK_END);
+        int insize = ftell(in);
+        fseek(out, 0L, SEEK_END);
+        int outsize = ftell(out);
+        fclose(in);
+        fclose(out);
+        //print diagnostics
+        auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+
+        utils::compDiagnostics(argv[2], argv[4], insize, outsize, level, elapsed);
+    }
+    else if (argc == 5 && strcmp(argv[1], "-d") == 0 && strcmp(argv[3], "-o") == 0)
+    {
+        //call decompression function
+        std::cout << "decompressing file..." << std::endl;
+        FILE* in = fopen(argv[2], "r+");
+        FILE* out = fopen(argv[4], "w");
+        auto start = std::chrono::steady_clock::now();
+        int comp = utils::decompress(in, out);
+        auto stop = std::chrono::steady_clock::now();
+        if (comp != Z_OK)
+        {
+            std::cout << "error occured" << std::endl;
+            return -1;
+        }
+        fseek(in, 0L, SEEK_END);
+        int insize = ftell(in);
+        fseek(out, 0L, SEEK_END);
+        int outsize = ftell(out);
+        fclose(in);
+        fclose(out);
+        //print diagnostics
+        auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+        utils::decompDiagnostics(argv[2], argv[4], insize, outsize, elapsed);
+
+    }
+    else printf("SimComp USAGE: SimComp [-d] [-c] <source> [-o] <dest> [-l] <level>\n");
+
     return 0;
 }

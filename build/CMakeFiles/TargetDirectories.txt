@@ -1,0 +1,3 @@
+/home/nivan/Projects/GSoC/SimComp/build/CMakeFiles/SimComp.dir
+/home/nivan/Projects/GSoC/SimComp/build/CMakeFiles/edit_cache.dir
+/home/nivan/Projects/GSoC/SimComp/build/CMakeFiles/rebuild_cache.dir

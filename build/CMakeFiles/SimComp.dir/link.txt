@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/SimComp.dir/src/SimComp.cpp.o CMakeFiles/SimComp.dir/src/utils.cpp.o -o SimComp   -L/home/nivan/Projects/GSoC/SimComp/zlib/lib  -Wl,-rpath,/home/nivan/Projects/GSoC/SimComp/zlib/lib -lz 
