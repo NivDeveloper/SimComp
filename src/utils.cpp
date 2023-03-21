@@ -64,7 +64,7 @@ namespace utils
         std::cout << "input size:\t\t" << decomp << " bytes" << std::endl;
         std::cout << "output size:\t\t" << comp  << " bytes"<< std::endl;
         std::cout << "Compression Ratio:\t" << std::setprecision(4) << (float(decomp)/float(comp)) << std::endl;
-        std::cout << "compression duration:\t" << elapsed.count() << " microseconds" <<  std::endl;  
+        std::cout << "Compression duration:\t" << elapsed.count() << " microseconds" <<  std::endl;  
     }
 
 
@@ -134,7 +134,28 @@ namespace utils
         std::cout << "input size:\t\t" << comp << " bytes" << std::endl;
         std::cout << "output size:\t\t" << decomp  << " bytes"<< std::endl;
         std::cout << "Decompression Ratio:\t" << std::setprecision(4) << ((float(decomp)/float(comp))) << std::endl;
-        std::cout << "compression duration:\t" << elapsed.count() << " microseconds" <<  std::endl;
+        std::cout << "Decompression duration:\t" << elapsed.count() << " microseconds" <<  std::endl;
+    }
+
+    void zlibError(int ret)
+    {
+        std::cout << "zlib ERROR!: ";
+        switch (ret) {
+        case Z_ERRNO:
+            std::cout << "i/o Error.";
+            break;
+        case Z_STREAM_ERROR:
+            std::cout << "invalid compression level." << std::endl;
+            break;
+        case Z_DATA_ERROR:
+            std::cout << "invalid or incomplete deflate data" << std::endl;
+            break;
+        case Z_MEM_ERROR:
+            std::cout << "out of memory." << std::endl;
+            break;
+        case Z_VERSION_ERROR:
+            std::cout << "zlib version does not match between included header and link file." << std::endl;
+        }
     }
 
 }

@@ -27,7 +27,7 @@
 
 int main(int argc, char** argv)
 {
-    if (argc == 7 && strcmp(argv[1], "-c") == 0 && strcmp(argv[3], "-o") == 0)
+    if (argc >= 5 && strcmp(argv[1], "-c") == 0 && strcmp(argv[3], "-o") == 0)
     {
         //call compression function
         std::cout << "compressing file..." << std::endl;
@@ -43,7 +43,7 @@ int main(int argc, char** argv)
         auto stop = std::chrono::steady_clock::now();
         if (comp != Z_OK)
         {
-            std::cout << "error occured" << std::endl;
+            utils::zlibError(comp);
             return -1;
         }
         fseek(in, 0L, SEEK_END);
@@ -68,7 +68,7 @@ int main(int argc, char** argv)
         auto stop = std::chrono::steady_clock::now();
         if (comp != Z_OK)
         {
-            std::cout << "error occured" << std::endl;
+            utils::zlibError(comp);
             return -1;
         }
         fseek(in, 0L, SEEK_END);
