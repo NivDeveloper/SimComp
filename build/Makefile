@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named SimComp
+# Target rules for targets named SimComp.exe
 
 # Build rule for target.
-SimComp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SimComp
-.PHONY : SimComp
+SimComp.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SimComp.exe
+.PHONY : SimComp.exe
 
 # fast build rule for target.
-SimComp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/build
-.PHONY : SimComp/fast
+SimComp.exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/build
+.PHONY : SimComp.exe/fast
 
 src/SimComp.o: src/SimComp.cpp.o
 .PHONY : src/SimComp.o
 
 # target to build an object file
 src/SimComp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/src/SimComp.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/src/SimComp.cpp.o
 .PHONY : src/SimComp.cpp.o
 
 src/SimComp.i: src/SimComp.cpp.i
@@ -142,7 +142,7 @@ src/SimComp.i: src/SimComp.cpp.i
 
 # target to preprocess a source file
 src/SimComp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/src/SimComp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/src/SimComp.cpp.i
 .PHONY : src/SimComp.cpp.i
 
 src/SimComp.s: src/SimComp.cpp.s
@@ -150,7 +150,7 @@ src/SimComp.s: src/SimComp.cpp.s
 
 # target to generate assembly for a file
 src/SimComp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/src/SimComp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/src/SimComp.cpp.s
 .PHONY : src/SimComp.cpp.s
 
 src/utils.o: src/utils.cpp.o
@@ -158,7 +158,7 @@ src/utils.o: src/utils.cpp.o
 
 # target to build an object file
 src/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/src/utils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/src/utils.cpp.o
 .PHONY : src/utils.cpp.o
 
 src/utils.i: src/utils.cpp.i
@@ -166,7 +166,7 @@ src/utils.i: src/utils.cpp.i
 
 # target to preprocess a source file
 src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/src/utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/src/utils.cpp.i
 .PHONY : src/utils.cpp.i
 
 src/utils.s: src/utils.cpp.s
@@ -174,7 +174,7 @@ src/utils.s: src/utils.cpp.s
 
 # target to generate assembly for a file
 src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/src/utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... SimComp"
+	@echo "... SimComp.exe"
 	@echo "... src/SimComp.o"
 	@echo "... src/SimComp.i"
 	@echo "... src/SimComp.s"

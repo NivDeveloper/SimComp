@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/nivan/Projects/GSoC/SimComp/src/SimComp.cpp" "CMakeFiles/SimComp.dir/src/SimComp.cpp.o" "gcc" "CMakeFiles/SimComp.dir/src/SimComp.cpp.o.d"
-  "/home/nivan/Projects/GSoC/SimComp/src/utils.cpp" "CMakeFiles/SimComp.dir/src/utils.cpp.o" "gcc" "CMakeFiles/SimComp.dir/src/utils.cpp.o.d"
+  "/home/nivan/Projects/GSoC/SimComp/src/SimComp.cpp" "CMakeFiles/SimComp.exe.dir/src/SimComp.cpp.o" "gcc" "CMakeFiles/SimComp.exe.dir/src/SimComp.cpp.o.d"
+  "/home/nivan/Projects/GSoC/SimComp/src/utils.cpp" "CMakeFiles/SimComp.exe.dir/src/utils.cpp.o" "gcc" "CMakeFiles/SimComp.exe.dir/src/utils.cpp.o.d"
   )
 
 # Targets to which this target links.

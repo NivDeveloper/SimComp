@@ -2,7 +2,15 @@
 
 namespace utils
 {
-
+    /**
+     * @brief performs compression of file and writes it out to output file
+     * 
+     * @param source    file containing data to be compressed
+     * @param dest      file to which compressed data will be written
+     * @param level     The level of compression to be performed (between 0 and 9). 0 being no compression (fastest) and 9 being the most compression (slowest).
+     *                  If no compression level is given, this will default to -1, which is equivalent to a level 6 compression
+     * @return int      -representing that state of the compression
+     */
     int compress(FILE* source, FILE* dest, int level)
     {
         int ret, flush;
@@ -54,7 +62,7 @@ namespace utils
 
 
     }
-
+    /*prints out diagnostics relating to the compression of the given file*/
     void compDiagnostics(char* inName, char* outname, size_t decomp, size_t comp, int level, std::chrono::duration<int64_t, std::micro> elapsed)
     {
         std::cout << "--------------------------------------------" << std::endl;
@@ -67,7 +75,13 @@ namespace utils
         std::cout << "Compression duration:\t" << elapsed.count() << " microseconds" <<  std::endl;  
     }
 
-
+    /**
+     * @brief performs decompression on a given file
+     * 
+     * @param source    compressed file which is to be decompressed
+     * @param dest      given file to which the decompressed data will be written
+     * @return int      -representing the state of the decompression
+     */
     int decompress(FILE *source, FILE *dest)
     {
         int ret;
@@ -126,6 +140,7 @@ namespace utils
         return ret == Z_STREAM_END ? Z_OK : Z_DATA_ERROR;
     }
 
+    /*prints out diagnostics relating to the decompression of the given file*/
     void decompDiagnostics(char* inName, char* outname, size_t decomp, size_t comp, std::chrono::duration<int64_t, std::micro> elapsed)
     {
         std::cout << "--------------------------------------------" << std::endl;

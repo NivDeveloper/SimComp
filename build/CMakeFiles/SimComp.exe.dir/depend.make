@@ -1,2 +1,2 @@
-# Empty dependencies file for SimComp.
+# Empty dependencies file for SimComp.exe.
 # This may be replaced when dependencies are built.

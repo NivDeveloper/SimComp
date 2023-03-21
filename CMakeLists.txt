@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.0)
-project(SimComp)
+project(SimComp.exe)
 
 add_executable(${PROJECT_NAME} src/SimComp.cpp
 src/utils.cpp

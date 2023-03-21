@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/nivan/Projects/GSoC/SimComp/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/SimComp.dir/all
+all: CMakeFiles/SimComp.exe.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/SimComp.dir/clean
+clean: CMakeFiles/SimComp.exe.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/SimComp.dir
+# Target rules for target CMakeFiles/SimComp.exe.dir
 
 # All Build rule for target.
-CMakeFiles/SimComp.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nivan/Projects/GSoC/SimComp/build/CMakeFiles --progress-num=1,2,3 "Built target SimComp"
-.PHONY : CMakeFiles/SimComp.dir/all
+CMakeFiles/SimComp.exe.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nivan/Projects/GSoC/SimComp/build/CMakeFiles --progress-num=1,2,3 "Built target SimComp.exe"
+.PHONY : CMakeFiles/SimComp.exe.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/SimComp.dir/rule: cmake_check_build_system
+CMakeFiles/SimComp.exe.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nivan/Projects/GSoC/SimComp/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SimComp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SimComp.exe.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nivan/Projects/GSoC/SimComp/build/CMakeFiles 0
-.PHONY : CMakeFiles/SimComp.dir/rule
+.PHONY : CMakeFiles/SimComp.exe.dir/rule
 
 # Convenience name for target.
-SimComp: CMakeFiles/SimComp.dir/rule
-.PHONY : SimComp
+SimComp.exe: CMakeFiles/SimComp.exe.dir/rule
+.PHONY : SimComp.exe
 
 # clean rule for target.
-CMakeFiles/SimComp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.dir/build.make CMakeFiles/SimComp.dir/clean
-.PHONY : CMakeFiles/SimComp.dir/clean
+CMakeFiles/SimComp.exe.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SimComp.exe.dir/build.make CMakeFiles/SimComp.exe.dir/clean
+.PHONY : CMakeFiles/SimComp.exe.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
