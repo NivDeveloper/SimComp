@@ -152,6 +152,7 @@ namespace utils
         std::cout << "Decompression duration:\t" << elapsed.count() << " microseconds" <<  std::endl;
     }
 
+    /*catch and handle error thrown by zlib*/
     void zlibError(int ret)
     {
         std::cout << "zlib ERROR!: ";
